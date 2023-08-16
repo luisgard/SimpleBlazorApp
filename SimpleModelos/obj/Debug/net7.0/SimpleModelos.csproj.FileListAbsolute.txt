@@ -1,0 +1,12 @@
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\bin\Debug\net7.0\SimpleModelos.deps.json
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\bin\Debug\net7.0\SimpleModelos.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\bin\Debug\net7.0\SimpleModelos.pdb
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\SimpleModelos.csproj.AssemblyReference.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\SimpleModelos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\SimpleModelos.AssemblyInfoInputs.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\SimpleModelos.AssemblyInfo.cs
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\SimpleModelos.csproj.CoreCompileInputs.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\SimpleModelos.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\refint\SimpleModelos.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\SimpleModelos.pdb
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleModelos\obj\Debug\net7.0\ref\SimpleModelos.dll
