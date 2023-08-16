@@ -1,0 +1,15 @@
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\bin\Debug\net7.0\SimpleDataAccess.deps.json
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\bin\Debug\net7.0\SimpleDataAccess.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\bin\Debug\net7.0\SimpleDataAccess.pdb
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\bin\Debug\net7.0\SimpleModelos.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\bin\Debug\net7.0\SimpleModelos.pdb
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\SimpleDataAccess.csproj.AssemblyReference.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\SimpleDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\SimpleDataAccess.AssemblyInfoInputs.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\SimpleDataAccess.AssemblyInfo.cs
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\SimpleDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\SimpleDataAccess.csproj.CopyComplete
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\SimpleDataAccess.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\refint\SimpleDataAccess.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\SimpleDataAccess.pdb
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleDataAccess\obj\Debug\net7.0\ref\SimpleDataAccess.dll
