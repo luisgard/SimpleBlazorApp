@@ -1,0 +1,54 @@
+﻿@inject HttpClient HttpClient
+@using SimpleModelos
+
+<div class="dialog-container">
+    <div class="dialog">
+        <div class="dialog-title">
+            <h2>Editando Producto: @Producto.Descripcion</h2>
+            <div>
+                <label>Nombre:</label>
+                <input class="form-control" @bind="@Producto.Descripcion" />
+            </div>
+            <div>
+                <label>Precio:</label>
+                <input class="form-control" type="number" step="0.01" @bind="@Producto.Precio" />
+            </div>
+        </div>
+        <form class="dialog-body">
+            <div>
+                <label>Categoría:</label>
+                <select class="form-control" @bind="Producto.CategoriaId">
+                    @foreach (var categoria in Categorias)
+                    {
+                        <option value="@categoria.Id">@categoria.Nombre</option>
+                    }
+                </select>
+            </div>
+        </form>
+        <div class="dialog-buttons">
+            <button class="btn btn-secondary mr-auto" @onclick="CancelarFormulario">Cancelar</button>
+            <button class="btn btn-success ml-auto" @onclick="GuardarCambios">Guardar</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public required Producto Producto { get; set; }
+    [Parameter, EditorRequired]
+    public List<Categoria> Categorias { get; set; }
+    [Parameter, EditorRequired]
+    public EventCallback OnCancel { get; set; }
+    [Parameter, EditorRequired]
+    public EventCallback OnSave { get; set; }
+
+    void CancelarFormulario()
+    {
+        OnCancel.InvokeAsync();
+    }
+
+    async Task GuardarCambios()
+    {
+        await OnSave.InvokeAsync();
+    }
+}

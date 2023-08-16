@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\luis.garduno\\source\\repos\\SimpleAppBlazor\\SimpleComponetsBlazor\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.SimpleComponetsBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.SimpleComponetsBlazor.props",
+      "PackagePath": "build\\SimpleComponetsBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.SimpleComponetsBlazor.props",
+      "PackagePath": "buildMultiTargeting\\SimpleComponetsBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.SimpleComponetsBlazor.props",
+      "PackagePath": "buildTransitive\\SimpleComponetsBlazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

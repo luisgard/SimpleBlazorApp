@@ -1,0 +1,92 @@
+﻿@using SimpleModelos
+
+@if (Productos != null)
+{
+    <h3>Productos</h3>
+    <button class="btn btn-primary" @onclick="OnNuevoProducto">Nuevo Producto</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Productos)
+            {
+                <tr>
+                    <td>@producto.Descripcion</td>
+                    <td>@producto.Precio</td>
+                    <td>@producto.Cat.Nombre</td>
+                    <td>
+                        <button class="btn btn-secondary" @onclick="() => OnEditarProducto(producto)">Editar</button>
+                        <button class="btn btn-danger" @onclick="() => OnEliminarProducto(producto)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (mostrarFormularioAgregar || mostrarFormularioEditar)
+    {
+        <ProductoDialog Producto="@productoSeleccionado" Categorias="@Categorias" OnCancel="CancelarFormulario" OnSave="GuardarProducto" />
+    }
+}
+
+@code {
+    [Parameter] 
+    public List<Producto> Productos { get; set; }
+    [Parameter] 
+    public List<Categoria> Categorias { get; set; }
+
+    [Parameter]
+    public bool mostrarFormularioAgregar { get; set; }
+
+    [Parameter]
+    public bool mostrarFormularioEditar { get; set; }
+    [Parameter]
+    public Producto productoSeleccionado { get; set; }  = new Producto();
+
+    [Parameter]
+    public Action OnNuevoProducto { get; set; }
+
+    [Parameter]
+    public Action<Producto> OnEditarProducto { get; set; }
+
+    [Parameter]
+    public Action<Producto> OnEliminarProducto { get; set; }
+
+    [Parameter]
+    public Action OnGuardar { get; set; }
+
+    void CancelarFormulario()
+    {
+        mostrarFormularioAgregar = false;
+        mostrarFormularioEditar = false;
+    }
+
+    async void GuardarProducto()
+    {
+        if (productoSeleccionado.Id == Guid.Empty)
+        {
+            //OnNuevoProducto?.Invoke();
+            OnGuardar?.Invoke();
+        }
+        else
+        {
+            OnGuardar?.Invoke();
+        }
+
+        CancelarFormulario();
+    }
+
+    void EditarProducto(Producto producto)
+    {
+        productoSeleccionado = producto;
+        mostrarFormularioAgregar = false;
+        mostrarFormularioEditar = true;
+    }
+}
