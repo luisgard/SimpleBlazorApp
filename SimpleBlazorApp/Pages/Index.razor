@@ -1,0 +1,135 @@
+﻿@page "/"
+@using SimpleApiResponse;
+@using SimpleComponetsBlazor.Componentes
+@using SimpleModelos;
+@using static System.Net.WebRequestMethods;
+@inject HttpClient Http
+<PageTitle>Index</PageTitle>
+
+
+<h3>Lista de Productos</h3>
+
+
+<ProductosGrid Productos="productos" Categorias="categorias" OnNuevoProducto="MostrarFormularioNuevo" OnEditarProducto="EditarProducto" OnEliminarProducto="EliminarProducto" mostrarFormularioEditar="MostrarFormularioEditar" mostrarFormularioAgregar="MostrarFormularioAgregar" productoSeleccionado="ProductoSeleccionado" OnGuardar="GuardarProducto" />
+
+
+@code {
+    List<Categoria> categorias = new List<Categoria>();
+
+    private List<Producto> productos = new List<Producto>();
+    public bool MostrarFormularioAgregar { get; set; } = false;
+    public bool MostrarFormularioEditar { get; set; } = false;
+    public Producto ProductoSeleccionado { get; set; } = new Producto();
+
+    protected override async Task OnInitializedAsync()
+    {
+        productos= await GetProductosAsync();
+        categorias = await GetCategoriasAsync();
+    }
+    public async Task<List<Producto>> GetProductosAsync()
+    {
+        List<Producto> Listaproductos = new List<Producto>();
+
+        var result = await Http.GetFromJsonAsync<ProductosResponse>("api/Productos");
+        if (result != null && result.Success)
+        {
+            Listaproductos = result.Resultado ?? new List<Producto>();
+        }
+        return Listaproductos;
+    }
+    public async Task<List<Categoria>> GetCategoriasAsync()
+    {
+        List<Categoria> ListCat = new List<Categoria>();
+
+        var result = await Http.GetFromJsonAsync<CategoriasResponse>("api/Productos/GetCategorias");
+        if (result != null && result.Success)
+        {
+            ListCat = result.Resultado ?? new List<Categoria>();
+        }
+        return ListCat;
+    }
+
+    public async Task<bool> AgregarProductoAsync(Producto pd)
+    {
+        bool operacionCorrecta = false;
+        AddProductoRequest request = new AddProductoRequest() { Cat = categorias.Where(x=> x.Id== pd.CategoriaId).FirstOrDefault(), Precio = pd.Precio, Descripcion = pd.Descripcion };
+
+        var result = await Http.PostAsJsonAsync("api/Productos/AgregarProducto", request);
+
+        if (result.IsSuccessStatusCode)
+        {
+            var response = await result.Content.ReadFromJsonAsync<ProductoResponse>();
+
+            if (response != null && response.Success && response.Resultado?.Id != Guid.Empty)
+            {
+                operacionCorrecta = true;
+            }
+        }
+
+        return operacionCorrecta;
+    }
+
+    public async Task<bool> EditarProductoAsync(Producto pd)
+    {
+        bool operacionCorrecta = false;
+        ProductoRequest request = new ProductoRequest() {Id=pd.Id, Cat = categorias.Where(x => x.Id == pd.CategoriaId).FirstOrDefault(), Precio = pd.Precio, Descripcion = pd.Descripcion };
+
+        var result = await Http.PostAsJsonAsync("api/Productos/EditarProducto", request);
+
+        if (result.IsSuccessStatusCode)
+        {
+            var response = await result.Content.ReadFromJsonAsync<ProductoResponse>();
+
+            if (response != null && response.Success && response.Resultado?.Id != Guid.Empty)
+            {
+                operacionCorrecta = true;
+            }
+        }
+
+        return operacionCorrecta;
+    }
+
+    async void GuardarProducto()
+    {
+        bool operacionCorrecta = false;
+        if (ProductoSeleccionado.Id == Guid.Empty)
+        {
+            operacionCorrecta = await AgregarProductoAsync(ProductoSeleccionado);
+        }
+        else
+        {
+            operacionCorrecta= await EditarProductoAsync(ProductoSeleccionado);
+        }
+
+        productos = await GetProductosAsync();
+        MostrarFormularioAgregar = false;
+    // Forzar una actualización de la vista
+    StateHasChanged();
+}
+
+    void MostrarFormularioNuevo()
+    {
+        ProductoSeleccionado = new Producto();
+        MostrarFormularioAgregar = true;
+        MostrarFormularioEditar = false;
+    }
+    
+   public void EditarProducto(Producto producto)
+{
+    ProductoSeleccionado.Id = producto.Id;
+    ProductoSeleccionado.CategoriaId = producto.CategoriaId;
+    ProductoSeleccionado.Precio = producto.Precio;
+    ProductoSeleccionado.Descripcion = producto.Descripcion;
+    MostrarFormularioAgregar = true;
+    MostrarFormularioEditar = true;
+    
+    // Forzar una actualización de la vista
+    StateHasChanged();
+}
+
+
+    void EliminarProducto(Producto producto)
+    {
+        // Lógica para eliminar un producto
+    }
+}
