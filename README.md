@@ -4,9 +4,12 @@ CRUD con Blazor
 Este es un proyecto CRUD desarrollado en Blazor con .NET 7 que te permite realizar operaciones básicas (Crear, Leer, Actualizar y Eliminar) en una lista de productos. Utiliza la inyección de dependencias para gestionar las operaciones de datos y se comunica con un API para interactuar con el backend.
 
 Requisitos Previos
-.NET Core SDK instalado en tu máquina.
+
+.NET Core SDK instalado en tu máquina.  
 Microsoft.EntityFrameworkCore
 Microsoft.EntityFrameworkCore.Sqlite
+
+
 
 Instalación
 Clona este repositorio en tu máquina local:
