@@ -5,6 +5,9 @@ Este es un proyecto CRUD desarrollado en Blazor con .NET 7 que te permite realiz
 
 Requisitos Previos
 .NET Core SDK instalado en tu máquina.
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Sqlite
+
 Instalación
 Clona este repositorio en tu máquina local:
 
