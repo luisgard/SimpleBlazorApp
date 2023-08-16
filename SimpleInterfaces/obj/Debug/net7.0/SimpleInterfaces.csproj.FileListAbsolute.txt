@@ -1,0 +1,15 @@
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\bin\Debug\net7.0\SimpleInterfaces.deps.json
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\bin\Debug\net7.0\SimpleInterfaces.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\bin\Debug\net7.0\SimpleInterfaces.pdb
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\bin\Debug\net7.0\SimpleModelos.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\bin\Debug\net7.0\SimpleModelos.pdb
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\SimpleInterfaces.csproj.AssemblyReference.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\SimpleInterfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\SimpleInterfaces.AssemblyInfoInputs.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\SimpleInterfaces.AssemblyInfo.cs
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\SimpleInterfaces.csproj.CoreCompileInputs.cache
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\SimpleInterfaces.csproj.CopyComplete
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\SimpleInterfaces.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\refint\SimpleInterfaces.dll
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\SimpleInterfaces.pdb
+C:\Users\luis.garduno\source\repos\SimpleAppBlazor\SimpleInterfaces\obj\Debug\net7.0\ref\SimpleInterfaces.dll
