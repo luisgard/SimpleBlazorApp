@@ -74,7 +74,7 @@
         bool operacionCorrecta = false;
         ProductoRequest request = new ProductoRequest() {Id=pd.Id, Cat = categorias.Where(x => x.Id == pd.CategoriaId).FirstOrDefault(), Precio = pd.Precio, Descripcion = pd.Descripcion };
 
-        var result = await Http.PostAsJsonAsync("api/Productos/EditarProducto", request);
+        var result = await Http.PutAsJsonAsync("api/Productos/EditarProducto", request);
 
         if (result.IsSuccessStatusCode)
         {
