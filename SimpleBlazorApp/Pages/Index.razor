@@ -1,4 +1,4 @@
-﻿@page "/"
+@page "/"
 @using SimpleApiResponse;
 @using SimpleComponetsBlazor.Componentes
 @using SimpleModelos;
@@ -89,6 +89,27 @@
         return operacionCorrecta;
     }
 
+    public async Task<bool> BorrarProductoAsync(Producto pd)
+    {
+        bool operacionCorrecta = false;
+
+        var result = await Http.DeleteAsync($"api/Productos/BorrarProducto/{pd.Id}");
+
+        if (result.IsSuccessStatusCode)
+        {
+            var response = await result.Content.ReadFromJsonAsync<ProductoResponse>();
+
+            if (response != null && response.Success && response.Resultado?.Id != Guid.Empty)
+            {
+                operacionCorrecta = true;
+            }
+        }
+
+        return operacionCorrecta;
+    }
+
+
+
     async void GuardarProducto()
     {
         bool operacionCorrecta = false;
@@ -103,9 +124,9 @@
 
         productos = await GetProductosAsync();
         MostrarFormularioAgregar = false;
-    // Forzar una actualización de la vista
-    StateHasChanged();
-}
+        // Forzar una actualización de la vista
+        StateHasChanged();
+    }
 
     void MostrarFormularioNuevo()
     {
@@ -113,23 +134,27 @@
         MostrarFormularioAgregar = true;
         MostrarFormularioEditar = false;
     }
-    
-   public void EditarProducto(Producto producto)
-{
-    ProductoSeleccionado.Id = producto.Id;
-    ProductoSeleccionado.CategoriaId = producto.CategoriaId;
-    ProductoSeleccionado.Precio = producto.Precio;
-    ProductoSeleccionado.Descripcion = producto.Descripcion;
-    MostrarFormularioAgregar = true;
-    MostrarFormularioEditar = true;
-    
-    // Forzar una actualización de la vista
-    StateHasChanged();
-}
 
-
-    void EliminarProducto(Producto producto)
+    public void EditarProducto(Producto producto)
     {
-        // Lógica para eliminar un producto
+        ProductoSeleccionado.Id = producto.Id;
+        ProductoSeleccionado.CategoriaId = producto.CategoriaId;
+        ProductoSeleccionado.Precio = producto.Precio;
+        ProductoSeleccionado.Descripcion = producto.Descripcion;
+        MostrarFormularioAgregar = true;
+        MostrarFormularioEditar = true;
+
+        // Forzar una actualización de la vista
+        StateHasChanged();
+    }
+
+
+    async void EliminarProducto(Producto producto)
+    {
+        var result = await BorrarProductoAsync(producto);
+        productos = await GetProductosAsync();
+        MostrarFormularioAgregar = false;
+        // Forzar una actualización de la vista
+        StateHasChanged();
     }
 }
