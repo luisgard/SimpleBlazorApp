@@ -16,7 +16,7 @@ Clona este repositorio en tu máquina local:
 
 bash
 Copy code
-git clone https://github.com/tu-usuario/tu-proyecto.git
+git clone https://github.com/luisgard/SimpleBlazorApp
 Navega al directorio del proyecto:
 
 bash
